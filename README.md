@@ -15,7 +15,9 @@ Add a Voyager FormField type of 'translatable' that utilizes translatable data o
 
 1. Create a new admin controller (e.g. app/Http/Controllers/Admin/ProductController.php) which extends VoyagerBreadController
 1. Set Voyager BREAD to use your new Controller. Voyager -> Tools -> Database -> Edit BREAD (Add BREAD if you have not already) -> Set Controller Name to the name of your controller ('App\Http\' is automatically prefixed) ![How to select your custom BREAD Controller](./readme/img/select-bread-controller.png)
-1. Use `$dataType->editRows->add()` and `createTranslatableDataRow()` to add translatable data rows to the interface ```
+1. Use `$dataType->editRows->add()` and `createTranslatableDataRow()` to add translatable data rows to the interface
+
+```
 <?php
 
 namespace App\Http\Controllers\Admin;
@@ -44,7 +46,9 @@ class ProductController extends \TCG\Voyager\Http\Controllers\VoyagerBreadContro
 
 }
 ```
+
 1. Edit your read view for the model - add clause for 'translatable' field type into `@if($row->type == ...)` block. Example:
+
 ```
     @elseif($row->type == 'translatable')
         @foreach ($dataTypeContent->getTranslations($row->field_name) as $k=>$v)
