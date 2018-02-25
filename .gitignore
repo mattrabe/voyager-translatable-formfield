@@ -1,0 +1,5 @@
+# Standard ignores
+.DS_Store
+Thumbs.db
+.idea
+.env

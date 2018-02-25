@@ -1,0 +1,41 @@
+{
+  "name": "mattrabe/voyager-translatable-formfield",
+  "description": "Add a Voyager FormField type of 'translatable' that utilizes translatable data on a Model that uses dimsav/laravel-translatable",
+  "keywords": ["voyager", "translatable", "laravel", "formfield"],
+  "license" : "MIT",
+  "authors" : [
+    {
+      "name": "Matt Rabe",
+      "email": "matt@websolutionshack.com",
+      "homepage": "http://www.websolutionshack.com"
+    }
+  ],
+  "require": {
+    "larapack/hooks": "~1.0",
+    "tcg/voyager": "^1.0",
+    "dimsav/laravel-translatable": "^8.0"
+  },
+  "autoload": {
+    "classmap": [
+        "database"
+    ],
+    "psr-4": {
+      "Mattrabe\\VoyagerTranslatableFormField\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Mattrabe\\VoyagerTranslatableFormField\\VoyagerTranslatableFormFieldServiceProvider"
+      ],
+      "aliases": [
+        "Mattrabe\\VoyagerTranslatableFormField\\Facade"
+      ]
+    },
+    "hook": {
+      "providers": [
+        "Mattrabe\\VoyagerTranslatableFormField\\VoyagerTranslatableFormFieldServiceProvider"
+      ]
+    }
+  }
+}
